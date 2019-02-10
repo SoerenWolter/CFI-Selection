@@ -1,0 +1,95 @@
+<template>
+  <style>
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-size: 13pt;
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      }
+
+    #app {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      
+    }
+
+    header {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color:#00324B;
+      color: white;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .title {
+      flex: 1;
+    }
+
+    .selector {
+      flex: 2;
+    }
+    header>h1 {
+      padding-top: 0.2em;
+      font-size: 1.5em;
+    }
+
+    main {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: row;
+      font-size: 1em;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    footer {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-evenly;
+      background-color: #00324B;
+      color: white;
+      padding: 0.5em;
+    }
+
+    iframe {
+      flex: 1;
+    }
+
+    .footer-title {
+      color: #afefff;
+    }
+    
+  </style>
+
+  <header>
+    <div class="title">
+      <h1>CFI-Selection</h1>
+    </div>
+    <div class="selector">
+        Select html/xhtml file: <input type="file" id="file-selector" name="files" accept="text/html, text/xhtml" change.delegate="fileselected($event)" />
+    </div>
+  </header>
+
+  <main ref="scrolled">
+    <iframe id="iframe" frameborder="0">
+
+    </iframe>
+  </main>
+  <footer>
+      <div> <h4> <span class="footer-title">Start: </span><span>${fragmentStart}</span></h4> </div> 
+      <div><h4> <span class="footer-title">End: </span><span>${fragmentEnd}</span></h4></div>
+  </footer>
+
+</template>
