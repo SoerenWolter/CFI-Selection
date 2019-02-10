@@ -1,6 +1,6 @@
 # About
 
-**Simple webapplication based on Aurelia and readium-cfi-js to select CFI information**
+**Simple web application based on Aurelia and readium-cfi-js to select X/HTML for CFI information**
 
 
 ## Getting started
