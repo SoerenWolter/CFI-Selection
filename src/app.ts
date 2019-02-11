@@ -49,16 +49,17 @@ export class App {
         this.selection(event);
       });
     }
-
   }
 
   readFile(file) : Promise<string> {
     return new Promise(function(resolve, reject){
-      const blobContent = new Blob([file], { type: "text/html" });
+      const blobContent = new Blob([file], { type: "application/xhtml+xml" });
       var reader = new FileReader();
       reader.onload = function(evt: any){
           console.log("Just read", file.name);
-          resolve(evt.target.result);
+          // must replace the xhtml: namespace
+          let result = evt.target.result.replace(new RegExp("xhtml:", 'g'), "");
+          resolve(result);
       };
       reader.onerror = function(err) {
           console.error("Failed to read", file.name, "due to", err);
