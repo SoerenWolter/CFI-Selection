@@ -14,7 +14,7 @@ const when = (condition, config, negativeConfig) =>
   condition ? ensureArray(config) : ensureArray(negativeConfig);
 
 // primary config:
-const title = 'Aurelia Navigation Skeleton';
+const title = 'CFI-Selection';
 const outDir = path.resolve(__dirname, project.platform.output);
 const srcDir = path.resolve(__dirname, 'src');
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
@@ -54,7 +54,7 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
       hidePathInfo: true, // prevents the path from being used in the filename when using maxSize
       chunks: "initial",
       // sizes are compared against source before minification
-      maxSize: 200000, // splits chunks if bigger than 200k, adjust as required (maxSize added in webpack v4.15)
+      maxSize: 800000, // splits chunks if bigger than 800k, adjust as required (maxSize added in webpack v4.15)
       cacheGroups: {
         default: false, // Disable the built-in groups default & vendors (vendors is redefined below)
         // You can insert additional cacheGroup entries here if you want to split out specific modules
